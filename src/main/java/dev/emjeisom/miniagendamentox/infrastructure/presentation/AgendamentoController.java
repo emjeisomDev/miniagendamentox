@@ -46,7 +46,7 @@ public class AgendamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, Object>> criarAgendamento(AgendamentoCreateRequest request){
+    public ResponseEntity<Map<String, Object>> criarAgendamento(@RequestBody AgendamentoCreateRequest request){
         Agendamento criado = criarAgendamentoUseCase.execute(agendamentoCreateMapper.toEntity(request));
 
         Map<String, Object> response = new HashMap<>();
