@@ -5,11 +5,11 @@ import dev.emjeisom.miniagendamentox.core.gateway.AgendamentoGateway;
 
 import java.time.LocalDateTime;
 
-public class atualizarAgendamentoUseCaseImpl implements atualizarAgendamentoUseCase {
+public class AtualizarAgendamentoUseCaseImpl implements AtualizarAgendamentoUseCase {
 
     private final AgendamentoGateway agendamentoGateway;
 
-    public atualizarAgendamentoUseCaseImpl(AgendamentoGateway agendamentoGateway) {
+    public AtualizarAgendamentoUseCaseImpl(AgendamentoGateway agendamentoGateway) {
         this.agendamentoGateway = agendamentoGateway;
     }
 

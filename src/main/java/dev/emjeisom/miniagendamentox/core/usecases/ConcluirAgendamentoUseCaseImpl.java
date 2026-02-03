@@ -3,21 +3,18 @@ package dev.emjeisom.miniagendamentox.core.usecases;
 import dev.emjeisom.miniagendamentox.core.entities.Agendamento;
 import dev.emjeisom.miniagendamentox.core.gateway.AgendamentoGateway;
 
-public class buscarAgendamentoPorIdUseCaseImpl implements buscarAgendamentoPorIdUseCase {
-
+public class ConcluirAgendamentoUseCaseImpl implements ConcluirAgendamentoUseCase {
     private final AgendamentoGateway agendamentoGateway;
 
-    public buscarAgendamentoPorIdUseCaseImpl(AgendamentoGateway agendamentoGateway) {
+    public ConcluirAgendamentoUseCaseImpl(AgendamentoGateway agendamentoGateway) {
         this.agendamentoGateway = agendamentoGateway;
     }
 
     @Override
     public Agendamento execute(Long id) {
-        var agendamento = agendamentoGateway.buscarAgendamentoPorId(id);
-        if (agendamento == null){
+        if (agendamentoGateway.buscarAgendamentoPorId(id) == null){
             throw new IllegalArgumentException("Agendamento não encontrado");
         }
-        return agendamento;
+        return agendamentoGateway.concluirAgendamento(id);
     }
-
 }
